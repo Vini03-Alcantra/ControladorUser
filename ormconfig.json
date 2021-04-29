@@ -4,9 +4,11 @@
     "port": 3306,
     "username": "root",
     "password": "admin123456",
-    "database": "yt_permission",
+    "database": "yt_permissions",
     "migrations": [
         "./src/database/migrations/*.ts"
     ],
     "cli": {
-        "migrationsDir": "./src/database/migr
+        "migrationsDir": "./src/database/migrations"
+    }
+}
