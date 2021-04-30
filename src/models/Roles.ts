@@ -1,7 +1,8 @@
-import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn} from "typeorm";
+import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, ManyToMany, JoinTable} from "typeorm";
+import Permission from "./Permissions";
 
 @Entity("roles")
-class Roles{
+class Role{
     @PrimaryGeneratedColumn("uuid")
     id: string;    
     @Column()
@@ -10,6 +11,14 @@ class Roles{
     description: string;
     @CreateDateColumn()
     created_at: Date;
+
+    @ManyToMany(() => Permission)
+    @JoinTable({
+        name: "permissions_roles",
+        joinColumns: [{name: "role_id"}],
+        inverseJoinColumns: [{name: "permission_id"}]
+    })
+    permission: Permission[]
 }
 
-export default Roles;
+export default Role;
