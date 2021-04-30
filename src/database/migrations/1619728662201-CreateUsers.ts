@@ -1,19 +1,18 @@
 import {MigrationInterface, QueryRunner, Table} from "typeorm";
-const {v4: uuidv4} = require("uuid");
 
-
-export class CreateUsers1619720668572 implements MigrationInterface {
+export class CreateUsers1619728662201 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(  
             new Table({
-                name: "users",
+                name: "user",
                 columns: [
                     {
                         name: "id",
-                        type: "int",
+                        type: "string",
                         isPrimary: true,
-                        generationStrategy: "uuid",                                                
+                        generationStrategy: "uuid",
+                                                
                     },
                     {
                         name: "name",

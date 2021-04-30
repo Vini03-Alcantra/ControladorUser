@@ -5,6 +5,9 @@
     "username": "root",
     "password": "admin123456",
     "database": "yt_permissions",
+    "entities": [
+        "./src/models/*.ts"
+    ],
     "migrations": [
         "./src/database/migrations/*.ts"
     ],
