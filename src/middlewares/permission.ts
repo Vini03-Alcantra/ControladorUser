@@ -35,3 +35,5 @@ function is(role: String[]){
 
     return roleAuthorized;
 }
+
+export {is}
